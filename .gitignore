@@ -1,0 +1,94 @@
+# ====================================================================================================
+# 📘 .gitignore — GenericBoilerplatePython
+# ----------------------------------------------------------------------------------------------------
+# Purpose:
+#   Defines which files and folders Git should *not* track or commit.
+#
+# Why:
+#   - Prevents accidental upload of secrets (e.g. tokens, credentials).
+#   - Keeps repositories lightweight (no .venv, build, or cache files).
+#   - Maintains clean, reproducible commits across environments.
+#
+# 🔒 Critical:
+#   Do NOT remove the credentials and .venv exclusions.
+#   They protect you from leaking Google API keys or login tokens.
+# ====================================================================================================
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🧩 1. Virtual Environments
+# ----------------------------------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🔐 2. Credentials & Secrets
+# ----------------------------------------------------------------------------------------------------
+# Never commit live tokens or credentials.
+credentials/token.json
+
+# (Recommended) Keep Google OAuth master key local per user
+# Uncomment the next line to exclude it from Git
+# credentials/credentials.json
+
+# Environment variables / private local configs
+.env
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🐍 3. Python Cache, Logs & Artifacts
+# ----------------------------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+logs/
+cache/
+*.tmp
+*.bak
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🏗️ 4. Build & Distribution Outputs
+# ----------------------------------------------------------------------------------------------------
+# PyInstaller, distutils, and build folders
+dist/
+build/
+binary_files/
+*.spec
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🧠 5. Jupyter & Notebook Auto-Files
+# ----------------------------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_*
+*.nbconvert.ipynb
+
+
+# ----------------------------------------------------------------------------------------------------
+# 💻 6. OS & Editor Specific
+# ----------------------------------------------------------------------------------------------------
+# macOS & Windows junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE configurations
+.vscode/
+.idea/
+*.code-workspace
+
+
+# ----------------------------------------------------------------------------------------------------
+# 🧪 7. Temporary Project Folders
+# ----------------------------------------------------------------------------------------------------
+# Local scratchpads or experimental directories
+scratchpad/
+tmp/
+temp/
