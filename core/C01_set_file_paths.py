@@ -80,8 +80,23 @@ SCRATCHPAD_DIR     = PROJECT_ROOT / "scratchpad"
 BINARY_FILES_DIR   = PROJECT_ROOT / "binary_files"
 
 # --- Ensure key directories exist (non-destructive) ---
-for path in [LOGS_DIR, DATA_DIR, OUTPUTS_DIR, CREDENTIALS_DIR]:
+CORE_FOLDERS = [
+    CORE_DIR, CONFIG_DIR, CREDENTIALS_DIR, DATA_DIR,
+    IMPLEMENTATION_DIR, LOGS_DIR, MAIN_DIR, OUTPUTS_DIR,
+    SCRATCHPAD_DIR, BINARY_FILES_DIR
+]
+
+for path in CORE_FOLDERS:
+    # Create directory if missing
     path.mkdir(parents=True, exist_ok=True)
+
+    # Add an __init__.py to make directory importable as a package
+    init_file = path / "__init__.py"
+    if not init_file.exists():
+        init_file.write_text("# Auto-generated to make this folder a Python package.\n")
+
+# --- Convenience: ensure base credentials exist for Google API ---
+GDRIVE_DIR = CREDENTIALS_DIR
 
 # ====================================================================================================
 # 5. GOOGLE DRIVE API FILES
