@@ -46,8 +46,6 @@ __pycache__/
 *.pyo
 *.pyd
 *.log
-logs/
-cache/
 *.tmp
 *.bak
 
@@ -58,7 +56,6 @@ cache/
 # PyInstaller, distutils, and build folders
 dist/
 build/
-binary_files/
 *.spec
 
 
@@ -89,6 +86,5 @@ Desktop.ini
 # 🧪 7. Temporary Project Folders
 # ----------------------------------------------------------------------------------------------------
 # Local scratchpads or experimental directories
-scratchpad/
 tmp/
 temp/
